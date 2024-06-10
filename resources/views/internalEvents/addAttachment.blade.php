@@ -29,7 +29,7 @@
                         <input name="Title" class="form-control validate" value="{{$model->Title}}">
                     </div>
                     <div class="form-switch form-check col-auto">
-                        <input name="IsPinned" class="form-control validate" type="checkbox" value="{{$model->IsPinned}}">
+                        <input name="IsPinned" class="form-check-input validate" type="checkbox" {{$model->IsPinned ? "checked" : ""}}>
                         <label class="form-check-label">
                             <i class="material-icons-round align-middle">block</i>
                             IsPinned

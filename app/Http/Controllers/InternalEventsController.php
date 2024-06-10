@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attachment;
 use App\Models\InternalEvent;
 use App\Models\InternalEventsAttachments;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Mail\Attachment;
 use Illuminate\View\View;
 use function Psy\debug;
 
@@ -69,13 +69,12 @@ class InternalEventsController extends Controller
     }
     public function addAttachment($id) {
         $model = new InternalEventsAttachments();
-        $model->InternalEventId->$Id;
+        $model->InternalEventId = $id;
         $attachments = Attachment::all();
         return view("InternalEvents.addAttachment", ["model" => $model, "attachments" => $attachments]);
     }
     public function addAttachmentToDB($id, Request $request) {
         $model = new InternalEventsAttachments();
-        $model->InternalEventId->$Id;
         $model->InternalEventId = $id;
         $model->Title = $request->input("Title");
         $model->AttachmentId = $request->input("AttachmentId");

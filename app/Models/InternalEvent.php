@@ -13,6 +13,10 @@ class InternalEvent extends Model
     protected $table = "InternalEvents";
     protected $primaryKey = "Id";
 
+    public function InternalEventsAttachments() {
+        return $this->hasMany(InternalEventsAttachments::class, "InternalEventId");
+    }
+
 //    public $Id;
 //    public $Title;
 //    public $Link;
